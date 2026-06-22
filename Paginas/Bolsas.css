@@ -1,0 +1,778 @@
+:root {
+    --Primaria: #FFFFFF;
+    --Secundaria: #B80600;
+    --Destaque: #41CC00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Primaria);
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+header {
+    width: 100%;
+    background-color: var(--Secundaria);
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'p1'
+        'p2'
+    ;
+}
+
+.iE1 {
+    width: 100%;
+    grid-area: p1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 2px solid black;
+}
+
+.logo {
+    grid-area: IE1;
+    background-color: transparent;
+    width: 25%;
+    min-width: 200px;
+    max-width: 250px;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: left;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    animation: aumentarMais 0.0001s linear forwards;
+}
+
+.pesquisa {
+    grid-area: IE2;
+    width: clamp(450px, 20%, 550px);
+}
+
+.barraPesquisa {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.cadastro {
+    grid-area: IE2;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+#cadastro{
+    font-size: 20px;
+}
+
+.imagemCadastro {
+    margin-right: 5px;
+    width: 30%;
+    max-width: 100px;
+    min-width: 45px;
+    transition: 0.3s;
+    object-fit: cover;
+}
+
+.imagemCadastro img {
+    width: 100%;
+    height: auto;
+}
+
+.imagemCadastro:hover{
+    animation: aumentar 0.3s linear forwards;
+}
+
+.botaoCadastro {
+    background-color: transparent;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.botaoCadastro p{
+    padding: 1px;
+    width: max-content;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.botaoCadastro p:hover {
+    background-color: #FF1111;
+}
+
+.carrinho {
+    margin-right: 20px;
+    padding: 7px;
+    grid-area: IE2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    min-width: 1rem;
+    max-width: 3rem;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid black;
+    transition: 0.3s;
+    border-radius: 40px;
+}
+
+.carrinho img {
+    width: 100%;
+    transition: 0.3s;
+    height: auto;
+}
+
+.carrinho:hover{
+    animation: aumentar 0.6s linear forwards;
+}
+
+.menuSuperior {
+    grid-area: p2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--Primaria);
+    position: relative;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.produtos,
+.entregas,
+.descontos,
+.suporte {
+    padding: 4px;
+    background-color: transparent;
+    font-size: 27px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    transition: 0.4s;
+}
+
+.suporte:hover {
+    background-color: #FEEFEF;
+}
+
+.descontos:hover {
+    background-color: #FEEFEF;
+}
+
+.entregas:hover {
+    background-color: #FEEFEF;
+}
+
+.produtos:hover~.m1 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.m1:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.m1 li {
+    border-radius: 7px;
+    transition: 0.4s;
+}
+
+.m1 li:hover {
+    background-color: #FEEFEF;
+}
+
+li {
+    padding: 3px;
+    width: max-content;
+}
+
+.m1 {
+    padding: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    background-color: var(--Primaria);
+    gap: 45px;
+    position: absolute;
+    top: 60%;
+    left: 50px;
+    width: max-content;
+    font-size: 27px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    border: 2px solid black;
+    z-index: 2;
+}
+
+.m1 li {
+    list-style-type: none;
+}
+
+.conteudo {
+    position: relative;
+    margin-top: 25px;
+    padding-top: 55px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 2px solid black;
+}
+
+.cardProdutos {
+    margin-bottom: 35px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    background-color: #22C55E;
+    width: auto;
+    min-width: 14rem;
+    max-width: 23rem;
+    height: 28.125rem;
+    font-size: 25px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.imagemProdutos {
+    /* background-color: var(--Secundaria); */
+    width: auto;
+    min-width: 75%;
+    max-width: 100%;
+    height: 75%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+.imagemProdutos img {
+    width: 100%;
+    height: auto;
+}
+
+.p3,
+.p5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acessar {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: 500;
+    gap: 10px;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+.p5,
+.p6 img {
+    min-width: 160%;
+}
+
+.botaoAcessar {
+    padding: 7px;
+    background-color: var(--Secundaria);
+    height: auto;
+    color: #EAEAEA;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(184, 6, 0, 0.6);
+}
+
+.botaoAcessar:hover {
+    transition: 0.6s;
+    animation: aumentar 0.3s linear forwards;
+}
+
+@keyframes aumentar {
+    0% {
+        transform: scale(1.0);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes aumentarMais {
+    0% {
+        transform: scale(1.0);
+    }
+
+    100% {
+        transform: scale(1.55);
+    }
+}
+
+.fim {
+    padding: 5px;
+    background-color: var(--Secundaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.fim .ul1 {
+    margin-right: 60px;
+}
+
+.menuInferior {
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menuInferior li {
+    transition: 0.3s;
+    border-radius: 7px;
+}
+
+.menuInferior li:hover {
+    background-color: #FF1111;
+}
+
+li {
+    list-style-type: none;
+}
+
+.de1 {
+    padding-right: 110px;
+    padding-left: 110px;
+    font-size: 23px;
+    display: flex;
+    justify-self: center;
+    align-self: left;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.voltaTopo {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    text-align: center;
+    font-size: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: transparent;
+    border: none;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.sair{
+    opacity: 0;
+    pointer-events: none; /* Impede que bloqueie o site ao carregar */
+    padding: 10px;
+    height: 250px;
+    width: 320px;
+    background-color: var(--Primaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: fixed;
+    top: 220px;
+    left: 37.5%;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+    
+    /* Define que a caixinha inteira está na camada mais alta do navegador */
+    z-index: 10000; 
+}
+
+/* A máscara escura que bloqueia o fundo do site */
+.sair::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    /* Deixa a máscara na camada mais baixa de dentro da caixinha */
+    z-index: 1; 
+}
+
+.sCima, .sBaixo {
+    position: relative;
+    z-index: 2; /* Sendo camada '2', eles ficam acima do '1' da máscara escura */
+}
+
+.sCima{
+    height: 35%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.sBaixo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 75%;
+    width: 100%;
+}
+
+.sBaixo button{
+    padding: 7px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+#sair{
+    background-color: red;
+}
+
+#nao{
+    background-color: #22C55E;
+}
+
+@media(max-width: 1010px){
+    .infoEssenciais{
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "logo pesquisa"
+        "cadastro carrinho"
+        ;
+    }
+
+    .iE1{
+        justify-content: center;
+    }
+
+    .logo{
+        grid-area: logo;
+    }
+
+    .pesquisa{
+        grid-area: pesquisa;
+        width: clamp(350px, 60vw, 750px);
+    }
+
+    .barraPesquisa{
+        margin: 0;
+        width: 100%;
+    }
+
+    .cadastro{
+        grid-area: cadastro;
+    }
+
+    .carrinho{
+        margin: 0;
+        grid-area: carrinho;
+        justify-self: center;
+    }
+}
+
+@media(max-width: 900px) {
+    .ms1 {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "p1 c1"
+            "a1 co1"
+        ;
+    }
+
+    .produtos {
+        grid-area: "p1";
+    }
+
+    .entregas {
+        grid-area: "c1";
+    }
+
+    .descontos {
+        grid-area: "a1";
+    }
+
+    .suporte {
+        grid-area: "co1";
+    }
+
+    .m1 {
+        top: 35%;
+        left: 140px;
+    }
+
+    .fim .ul1 {
+        margin: 0;
+    }
+
+    .voltaTopo {
+        right: 5px;
+    }
+
+}
+
+@media(max-width: 800px) {
+    .menuInferior {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .menuInferior p{
+        font-size: 20px;
+    }
+
+    .ul1 {
+        margin: 0;
+    }
+
+    .voltaTopo {
+        right: 0px;
+        bottom: 0px;
+    }
+
+    .de1{
+        padding: 0;
+        gap: 40px;
+        justify-self: left;
+        justify-content: left;
+    }
+
+}
+
+@media(max-width: 670px) {
+    .menuInferior {
+        gap: 10px;
+    }
+
+    .menuInferior{
+        font-size: 16px;
+    }
+
+    .menuInferior p{
+        font-size: 14px;
+    }
+
+    .ul1 {
+        margin: 0;
+    }
+
+    .m1 {
+        top: 35%;
+        left: 50px;
+    }
+}
+
+@media(max-width: 600px) {
+    .infoEssenciais{
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "logo logo"
+        "pesquisa pesquisa"
+        "cadastro carrinho"
+        ;
+    }
+    /* .iE1{
+        flex-wrap: wrap;
+    } */
+
+    .logo{
+        grid-area: logo;
+        margin: 0;
+    }
+    .pesquisa{
+        margin: 0;
+        grid-area: pesquisa;
+        width: clamp(150px, 95vw, 800px);
+    }
+
+    .cadastro{
+        grid-area: cadastro;
+    }
+
+    .imagemCadastro{
+        width: 20%;
+    }
+
+    .carrinho{
+        grid-area: carrinho;
+        width: 30%;
+        display: flex;
+        align-self: center;
+        justify-self: center;
+    }
+
+    @keyframes aumentar {
+        0%{
+            transform: scale(1.0);
+        }
+        100%{
+            transform: scale(1.15);
+        }
+    }
+
+    .ms1 {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "p1"
+            "c1"
+            "a1"
+            "co1"
+        ;
+    }
+
+    .menuSuperior {
+        gap: 35px;
+        text-align: center;
+    }
+
+    .m1 {
+        font-size: 22px;
+        top: 15%;
+        left: 10px;
+    }
+
+    .menuInferior {
+        gap: 5px;
+        font-size: 18px;
+        justify-content: space-between;
+    }
+
+    .de1{
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 500px){
+    .menuInferior{
+        flex-wrap: wrap;
+        width: min-content;
+        justify-self: center;
+        align-self: center;
+    }
+}
+
+@media(max-width: 470px) {
+    .m1 {
+        padding-left: 10px;
+        width: max-content;
+        font-size: 18px;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .menuInferior {
+        gap: 30px;
+        font-size: 15px;
+        justify-content: center;
+    }
+
+    .ul1{
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .ul2{
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+    }
+
+    .ul3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 3;
+        width: 100%;
+    }
+
+    .voltaTopo {
+        bottom: 10px;
+        right: 2px;
+        font-size: 30px;
+    }
+
+    .de1{
+        flex-direction: column;
+        gap: 10px;
+    }
+    @keyframes aumentarAindaMais {
+        0%{
+            transform: scale(1.0);
+        }
+
+        100%{
+            transform: scale(1.3);
+        }
+    }
+
+    .carrinho {
+        width: 100%;
+        animation: none;
+        animation: aumentarAindaMais 0.0001s linear forwards;
+    }
+
+}
+
+@media(max-width: 410px) {
+    .m1 {
+        padding: 4px;
+        width: max-content;
+        font-size: 18px;
+        left: 0;
+    }
+}

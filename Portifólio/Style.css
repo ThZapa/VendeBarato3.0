@@ -1,0 +1,297 @@
+:root{
+    --Primaria: #E8EFEB;
+    --Secundaria: #3587A441;
+    --Terciaria: #1378C08C;
+    --Quarciaria: #1F3A4AD1;
+    --Preto: #333533;
+    --Texto: #141514;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Primaria);
+    border-collapse: collapse;
+
+}
+
+.Conteudo{
+    margin: 0.75rem;
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+    background-color: var(--Terciaria);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23000000' fill-opacity='0.35'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+    width: 98%;
+    max-width: 290rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 380rem;
+    border: 2px solid var(--Texto);
+    border-radius: 10px;
+}
+
+
+.InformaçõesGerais{
+    margin-bottom: 3.5rem;
+    background-color: var(--Terciaria);
+    width: 98%;
+    max-width: 260rem;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.Logo{
+    width: 25%;
+    max-width: 170px;
+    min-width: 50px;
+    height: auto;
+    max-height: 195px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+
+}
+.Logo img{
+    width: 100%;
+    max-width: 170px;
+    min-width: 80px;
+    height: auto;
+    max-height: 175px;
+    object-fit: contain;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+.NomeCompleto{
+    margin-left: 5%;
+    width: 65%;
+    max-width: 25.5rem;
+    min-width: 10.8rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.Nome{
+    margin-left: 2%;
+    font-size: 3.7em;
+    color: var(--Texto);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.Sobrenome{
+    font-size: 3.7em;
+    color: var(--Texto);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Profissão{
+    font-weight: 600;
+    font-size: 1.5em;
+    color: var(--Texto);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.InformaçõesContato{
+    width: 100%;
+    max-width: 490px;
+    min-width: 165px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.InformaçõesContato :hover{
+    cursor: pointer;
+    text-underline-offset: 0.2rem;
+    text-decoration: 4px underline dotted var(--Texto);
+}
+
+.BotãoContato{
+    background-color: transparent;
+    width: 100%;
+    max-width: 490px;
+    min-width: 165px;
+    height: auto;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 540;
+    border: transparent;
+}
+
+
+.InformaçõesPessoais{
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    width: 98%;
+    max-width: 75rem;
+    min-width: 35rem;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.Foto{
+    margin-right: 10%;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    width: 35%;
+    height: 90%;
+}
+
+.Foto img{
+    width: 100%;
+    min-width: 250px;
+    height: 100%;
+    min-height: 300px;
+    object-fit: contain;
+}
+
+.Descrição{
+    background-color: var(--Terciaria);
+    width: max-content;
+    min-width: 470px;
+    height: auto;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid black;
+    flex: 1;
+}
+
+.MinhaDescrição{
+    padding-left: 1%;
+    width: auto;
+    height: auto;
+    font-size: 2.5rem;
+}
+
+.Escolaridade{
+    margin-bottom: 3.5rem;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 98%;
+    max-width: 75rem;
+    min-width: 35rem;
+    height: auto;
+    font-size: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.EstudoFeito{
+    padding-left: 1%;
+    margin-right: 2%;
+    background-color: var(--Terciaria);
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    min-width: 35rem;
+    height: auto;
+    font-size: 2.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.EstudoEscola{
+    font-size: 2.5rem;
+    height: auto;
+}
+
+.Escola{
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    font-size: 2rem;
+    border: transparent;
+}
+
+.tipo2{
+    margin-bottom: 3.5rem;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    width: 100%;
+    max-width: 75rem;
+    min-width: 35rem;
+    height: auto;
+    font-size: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.FotoGraduado{
+    margin-right: 1%;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    width: 27%;
+    height: 90%;
+}
+
+.FotoGraduado img{
+    width: 100%;
+    max-width: 200px;
+    min-width: 150px;
+    height: 100%;
+    max-height: 305px;
+    min-height: 150px;
+    object-fit: contain;
+}
+
+.Certificado{
+    margin-top: 2%;
+    width: auto;
+    min-width: 120px;
+    height: auto;
+    max-height: 280px;
+    display: flex;
+    align-self: center;
+    justify-content: start;
+}
+
+.Certificado img{
+    max-width: 500px;
+    min-width: 440px;
+    height: auto;
+    max-height: 280px;
+    min-height: 200px;
+    object-fit: contain;
+}
+
+.Cursos{
+    padding-left: 1%;
+    margin-right: 2%;
+    background-color: var(--Terciaria);
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    min-width: 35rem;
+    height: auto;
+    font-size: 2.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+}

@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+header {
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    background-color: darkblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.imagemLua {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 150px;
+    max-height: 200px;
+    height: auto;
+    object-fit: cover;
+}
+
+.imagemLua img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.menuSuperior {
+    width: max-content;
+    height: auto;
+    font-size: 1.5625rem;
+}
+
+.li1:hover {
+    text-underline-offset: 4px;
+    text-decoration: 4px underline dotted black;
+}
+
+.li2:hover {
+    text-underline-offset: 4px;
+    text-decoration: 4px underline dotted black;
+}
+
+.li3:hover {
+    text-underline-offset: 4px;
+    text-decoration: 4px underline dotted black;
+}
+
+.menuSuperior ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.busca {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.barraPesquisa {
+    width: max-content;
+    height: auto;
+    font-size: 22px;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.botaoPesquisa {
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+main {
+    gap: 20px;
+    padding: 15px;
+    background-image: url(imagens/fotoFundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: grid;
+    grid-template-areas:
+        's1 s2';
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.c1 {
+    width: clamp(20px, 5vw, 60px);
+    height: auto;
+}
+
+.c1 img {
+    width: 100%;
+    height: auto;
+}
+
+.Esquerdo {
+    display: flex;
+    align-items: flex-end;
+    grid-area: s1;
+}
+
+.Direito {
+    display: flex;
+    align-items: flex-end;
+    grid-area: s2;
+}
+
+.caixa {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: clamp(24px, 5vw, 26px);
+    text-align: center;
+    background-color: rgb(128, 128, 128, 0.4);
+    border-radius: 20px;
+}
+
+.c2 {
+    background-color: rgb(128, 128, 128, 0.5);
+}
+
+
+@media(max-width: 400px){
+    
+}
+
+
+@media(max-width: 500px){
+    header{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media(min-width: 500px) {
+    
+    header{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .caixa {
+        font-size: 30px;
+        height: auto;
+    }
+
+    .c1 {
+        width: clamp(40px, 8vw, 90px);
+        height: auto;
+    }
+
+    .c1 img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media(min-width: 800px) {
+    
+    header{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    main{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .caixa {
+        font-size: 30px;
+        height: auto;
+    }
+
+    .c1 {
+        width: clamp(30px, 8vw, 90px);
+        height: auto;
+    }
+
+    .c1 img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media(min-width: 1200px) {
+
+
+    .caixa {
+        font-size: 40px;
+        height: auto;
+    }
+
+    .c1 {
+        width: clamp(40px, 8vw, 90px);
+        height: auto;
+    }
+
+    .c1 img{
+        width: 100%;
+        height: auto;
+    }
+}
