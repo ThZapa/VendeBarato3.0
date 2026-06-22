@@ -125,7 +125,7 @@ function verificaDados() {
         alert("Bem vindo(a) " + usuarioAtual);
         localStorage.setItem("usuarioAtual", usuarioAtual);
         loginRealizado = true;
-        window.location.href = "Index.html";
+        window.location.href = "Inicio.html";
     } else {
         alert("E-mail ou senha incorreta");
     }
