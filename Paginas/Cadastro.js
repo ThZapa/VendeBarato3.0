@@ -96,12 +96,12 @@ function verificaDados() {
             trocaTipo();
             atualizaTipo();
             return;
-        } else if(emailCadastrado === null){
+        } else if (emailCadastrado === null) {
             alert("Cadastre seu e-mail");
             trocaTipo();
             atualizaTipo();
             return;
-        } else{
+        } else {
             alert("Cadastre sua senha");
             trocaTipo();
             atualizaTipo();
@@ -219,21 +219,28 @@ function adicionaDados() {
         }
     }
 
-    if (senhaCadastrada.indexOf(senhaInserida) == -1 || emailCadastrado.indexOf(emailInserido) == -1) {
-        if (senhaCadastrada.indexOf(senhaInserida) == -1) {
+    if (senhaCadastrada.indexOf(senhaInserida) == -1 || emailCadastrado.indexOf(emailInserido) == -1 || 
+    usuariosCadastrados.indexOf(nomeInserido) == -1) {
+        if (senhaCadastrada.indexOf(senhaInserida) == -1 && emailCadastrado.indexOf(emailInserido) == -1) {
+            senhaCadastrada.push(senhaInserida);
+            emailCadastrado.push(emailInserido);
+            localStorage.setItem("senha", JSON.stringify(senhaCadastrada));
+            localStorage.setItem("Email", JSON.stringify(emailCadastrado));
+        } else if (senhaCadastrada.indexOf(senhaInserida) == -1) {
+            senhaCadastrada.push(senhaInserida);
+            localStorage.setItem("senha", JSON.stringify(senhaCadastrada));
+        } else {
+            emailCadastrado.push(emailInserido);
+            localStorage.setItem("Email", JSON.stringify(emailCadastrado));
         }
-        if (usuariosCadastrados.indexOf(nomeInserido)) {
 
+        if (usuariosCadastrados.indexOf(nomeInserido) == -1) {
+            usuariosCadastrados.push(nomeInserido);
+            localStorage.setItem("Usuarios", JSON.stringify(usuariosCadastrados));
         }
-        emailCadastrado.push(emailInserido);
-        senhaCadastrada.push(senhaInserida);
-        usuariosCadastrados.push(nomeInserido);
-        localStorage.setItem("Usuarios", JSON.stringify(usuariosCadastrados));
-        localStorage.setItem("Email", JSON.stringify(emailCadastrado));
-        localStorage.setItem("senha", JSON.stringify(senhaCadastrada));
         alert("Dados cadastrados");
     } else {
-        alert("Você já cadastrou seu e-mail ou senha");
+        alert("Você já cadastrou seu e-mail, senha ou usuário");
     }
     tipo = 1;
     atualizaTipo();
